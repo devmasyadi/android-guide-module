@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val guideModule = module {
-    single {
+    factory {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.NONE)
 
@@ -25,7 +25,7 @@ val guideModule = module {
             .build()
     }
 
-    single {
+    factory {
         val retrofit = Retrofit.Builder()
             .baseUrl(GuideUtils.baseUrl ?: BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
