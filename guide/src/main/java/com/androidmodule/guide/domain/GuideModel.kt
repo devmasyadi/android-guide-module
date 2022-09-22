@@ -20,7 +20,7 @@ data class GuideModel(
     val packageName: String? = null,
 
     @field:SerializedName("content")
-    val content: List<ContentItem?>? = null
+    val content: List<ContentItem>? = null
 ) : Parcelable
 
 @Parcelize
