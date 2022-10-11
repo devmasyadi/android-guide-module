@@ -7,6 +7,27 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class GuideModel(
 
+    @field:SerializedName("sizeNativeHome")
+    val sizeNativeHome: String? = null,
+
+    @field:SerializedName("intervalNativeHome")
+    val intervalNativeHome: Int? = null,
+
+    @field:SerializedName("isShowBannerHome")
+    val isShowBannerHome: Boolean? = null,
+
+    @field:SerializedName("positionBannerHome")
+    val positionBannerHome: String? = null,
+
+    @field:SerializedName("isShowNativeHome")
+    val isShowNativeHome: Boolean? = null,
+
+    @field:SerializedName("positionBannerDetail")
+    val positionBannerDetail: String? = null,
+
+    @field:SerializedName("isShowBannerDetail")
+    val isShowBannerDetail: Boolean? = null,
+
     @field:SerializedName("isOverrideImage")
     val isOverrideImage: Boolean? = null,
 
