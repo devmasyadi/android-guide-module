@@ -26,12 +26,14 @@ val guideModule = module(override = true) {
     }
 
     single {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(GuideUtils.baseUrl ?: BuildConfig.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(get())
-            .build()
-        retrofit.create(ApiService::class.java)
+        val retrofit = GuideUtils.baseUrl?.let { url ->
+            Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(get())
+                .build()
+        }
+        retrofit?.create(ApiService::class.java)
     }
 
     single { Repository(get()) }
