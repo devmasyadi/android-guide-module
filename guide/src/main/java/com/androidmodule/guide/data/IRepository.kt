@@ -4,5 +4,5 @@ import com.androidmodule.guide.domain.GuideModel
 import kotlinx.coroutines.flow.Flow
 
 interface IRepository {
-    fun getData(packageName: String): Flow<Resource<GuideModel>>
+    fun getData(appId: String, content: String): Flow<Resource<GuideModel>>
 }

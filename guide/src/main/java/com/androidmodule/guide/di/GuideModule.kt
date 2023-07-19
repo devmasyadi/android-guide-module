@@ -1,9 +1,7 @@
 package com.androidmodule.guide.di
 
-import com.androidmodule.guide.BuildConfig
 import com.androidmodule.guide.data.Repository
 import com.androidmodule.guide.data.remote.ApiService
-import com.androidmodule.guide.utils.GuideUtils
 import com.androidmodule.guide.viewmodel.GuideViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -26,7 +24,7 @@ val guideModule = module(override = true) {
     }
 
     single {
-        val retrofit = GuideUtils.baseUrl?.let { url ->
+        val retrofit = GuideStyle.style?.let { url ->
             Retrofit.Builder()
                 .baseUrl(url)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -38,4 +36,8 @@ val guideModule = module(override = true) {
 
     single { Repository(get()) }
     viewModel { GuideViewModel(get()) }
+}
+
+object GuideStyle {
+    var style: String? = null
 }
