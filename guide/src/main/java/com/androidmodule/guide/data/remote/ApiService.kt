@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("")
+    @GET("apps")
     suspend fun getData(
         @Query("appId") appId: String?,
         @Query("content") content: String?
