@@ -5,13 +5,12 @@ plugins {
 }
 
 android {
-    namespace 'com.androidmodule.guide'
+    namespace 'com.google.android.material.content'
     compileSdk 34
 
     defaultConfig {
         minSdk 19
         targetSdk 34
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
